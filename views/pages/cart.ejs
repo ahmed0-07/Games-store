@@ -1,0 +1,21 @@
+<h1 class="text-center mb-4">Your Shopping Cart</h1>
+    <div class="cart-items">
+      <% games.forEach(game => { %>
+          <div class="cart-item">
+            <div class="cart-item-title"><%= game.name %></div>
+            <div class="cart-item-price">$<%= game.price %></div>
+            <form method="post" action="/user/removefromcart/<%= game._id %>">
+              <i class="fas fa-trash"></i>
+              <button type="submit" class="btn btn-danger">Remove</button>
+            </form>
+          </div>
+      <% }) %>
+    </div>
+    <div class="cart-summary text-end mt-4">
+      <h4>Total: <span id="total-price">$<%= total %></span></h4>
+      <% if(games.length > 0) { %>
+          <form method="post" action="/user/thank-you">
+            <button class="btn btn-success btn-lg" id="checkout-button">Proceed to Checkout</button>
+          </form>
+      <% } %>
+    </div>

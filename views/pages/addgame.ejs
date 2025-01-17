@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Add New Game</h1>
+
+    <!-- Add Game Form -->
+    <form method="post" action="/admin/addgame">
+      <div class="mb-3">
+        <label for="gameName" class="form-label">Game Name</label>
+        <input type="text" class="form-control" id="gameName" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="gamePrice" class="form-label">Price</label>
+        <input type="number" class="form-control" id="gamePrice" name="price" step="0.01" required>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Add Game</button>
+        <a href="/admin" class="btn btn-secondary">Cancel</a>
+      </div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<h1 class="text-center mb-4">Featured Games</h1>
+
+<div class="text-center mb-4">
+    <a href="/admin/addgame" class="btn btn-success">Add Game</a>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <% data.forEach(element => { %>
+        <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+            <h5 class="card-title"><%= element.name %></h5>
+            <p class="card-text">$<%= element.price %></p>
+            <form  method="post" action="/admin/removegame/<%= element._id %>">
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    <% }) %>
+</div>
